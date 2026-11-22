@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import useResumeAnalysis from './hooks/useResumeAnalysis'
 
@@ -27,10 +27,10 @@ export default function App() {
   }), [file, analysis, status, error, isAnalyzing, progress, theme, hasFile, handleFileSelect, analyze, clearHistory])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home {...pageProps} />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
